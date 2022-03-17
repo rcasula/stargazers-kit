@@ -11,7 +11,7 @@ import XCTest
 class StargazersKitTests: XCTestCase {
 
     override func setUpWithError() throws {
-        StargazersKit.configure()
+        StargazersKit.configure(bundleIdentifier: "dev.casula.tests")
     }
     
     func testFull() {
