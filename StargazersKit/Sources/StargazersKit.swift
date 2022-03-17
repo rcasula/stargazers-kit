@@ -31,7 +31,7 @@ public class StargazersKit {
     /// Configures a default StargazersKit instance. Raises an exception if any configuration step fails.
     /// This method should be called after the app is launched and before using the StargazersKit shared instance.
     /// - Parameter bundleIdentifier: The bundle identifier of the Host application.
-    public class func configure(bundleIdentifier: String) {
+    public class func configure(bundleIdentifier: String = Bundle.main.bundleIdentifier!) {
         configure(bundleIdentifier: bundleIdentifier, networkClient: StandardNetworkClient())
     }
 
