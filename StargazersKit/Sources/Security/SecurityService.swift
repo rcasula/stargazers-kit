@@ -12,12 +12,13 @@ class SecurityService {
 
     private static let bundleIdentifierMaxLength = 20
 
-    class func isDeviceSecure() throws -> Bool {
+    class func isDeviceSecure(bundleIdentifier: String) throws -> Bool {
+        let runningTests = ProcessInfo.processInfo.environment["XCTestConfigurationFilePath"] != nil
         if isDeviceRunningiOSLessThan13() {
             throw StargazerError.iOSVersionTooOld
         }
 
-        if isRunningInSimulator() {
+        if !runningTests, isRunningInSimulator() {
             throw StargazerError.deciceEmulated
         }
 
@@ -25,7 +26,7 @@ class SecurityService {
             throw StargazerError.deviceRooted
         }
 
-        if applicationHasTooLongBundleIdentifier() {
+        if applicationHasTooLongBundleIdentifier(identifier: bundleIdentifier) {
             throw StargazerError.packageNameTooLong
         }
 
@@ -67,9 +68,7 @@ class SecurityService {
         return false
     }
 
-    class func applicationHasTooLongBundleIdentifier() -> Bool {
-        guard let identifier = Bundle.main.bundleIdentifier
-        else { return true }
+    class func applicationHasTooLongBundleIdentifier(identifier: String) -> Bool {
         return identifier.count > bundleIdentifierMaxLength
     }
 }
@@ -93,10 +92,8 @@ extension SecurityService {
     }
 
     class func deviceHasSuspiciousFiles() -> Bool {
-        let paths = [
+        var paths = [
             "/Applications/Cydia.app",
-            "/bin/bash",
-            "/usr/sbin/sshd",
             "/etc/apt",
             "/private/var/lib/apt/",
             "/private/var/lib/cydia",
@@ -105,6 +102,15 @@ extension SecurityService {
             "/Library/MobileSubstrate/DynamicLibraries/LiveClock.plist",
             "/System/Library/LaunchDaemons/com.saurik.Cydia.Startup.plist"
         ]
+
+        if !isRunningInSimulator() {
+            paths += [
+                "/bin/bash",
+                "/usr/sbin/sshd",
+                "/bin/sh",
+                "/usr/bin/ssh"
+            ]
+        }
 
         for path in paths {
             if FileManager.default.fileExists(atPath: path) {
