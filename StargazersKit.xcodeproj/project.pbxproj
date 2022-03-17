@@ -24,6 +24,8 @@
 		0F090E8A27E32A5A00E5E5C3 /* SecurityTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F090E8927E32A5A00E5E5C3 /* SecurityTests.swift */; };
 		0F090E8D27E3626C00E5E5C3 /* SecurityService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F090E8C27E3626C00E5E5C3 /* SecurityService.swift */; };
 		0F090E8F27E36C5F00E5E5C3 /* VPNChecker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F090E8E27E36C5F00E5E5C3 /* VPNChecker.swift */; };
+		0F090E9227E37A0400E5E5C3 /* StargazersKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F8B93B327E2546400C95F71 /* StargazersKit.framework */; platformFilter = ios; };
+		0F090E9327E37A0400E5E5C3 /* StargazersKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 0F8B93B327E2546400C95F71 /* StargazersKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		0F8B93B827E2546400C95F71 /* StargazersKit.docc in Sources */ = {isa = PBXBuildFile; fileRef = 0F8B93B727E2546400C95F71 /* StargazersKit.docc */; };
 		0F8B93BE27E2546500C95F71 /* StargazersKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F8B93B327E2546400C95F71 /* StargazersKit.framework */; };
 		0F8B93C327E2546500C95F71 /* StargazersKitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F8B93C227E2546500C95F71 /* StargazersKitTests.swift */; };
@@ -35,6 +37,20 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		0F090E9027E3766300E5E5C3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0F8B93AA27E2546400C95F71 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 0F8B93D027E2548500C95F71;
+			remoteInfo = StargazersExample;
+		};
+		0F090E9427E37A0400E5E5C3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0F8B93AA27E2546400C95F71 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 0F8B93B227E2546400C95F71;
+			remoteInfo = StargazersKit;
+		};
 		0F8B93BF27E2546500C95F71 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 0F8B93AA27E2546400C95F71 /* Project object */;
@@ -43,6 +59,20 @@
 			remoteInfo = StargazersKit;
 		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		0F090E9627E37A0400E5E5C3 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				0F090E9327E37A0400E5E5C3 /* StargazersKit.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		0F090E6427E3141200E5E5C3 /* StargazersKit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StargazersKit.swift; sourceTree = "<group>"; };
@@ -94,6 +124,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0F090E9227E37A0400E5E5C3 /* StargazersKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -307,6 +338,7 @@
 			);
 			dependencies = (
 				0F8B93C027E2546500C95F71 /* PBXTargetDependency */,
+				0F090E9127E3766300E5E5C3 /* PBXTargetDependency */,
 			);
 			name = StargazersKitTests;
 			productName = StargazersKitTests;
@@ -320,10 +352,12 @@
 				0F8B93CD27E2548500C95F71 /* Sources */,
 				0F8B93CE27E2548500C95F71 /* Frameworks */,
 				0F8B93CF27E2548500C95F71 /* Resources */,
+				0F090E9627E37A0400E5E5C3 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				0F090E9527E37A0400E5E5C3 /* PBXTargetDependency */,
 			);
 			name = StargazersExample;
 			productName = StargazersExample;
@@ -443,6 +477,17 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		0F090E9127E3766300E5E5C3 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 0F8B93D027E2548500C95F71 /* StargazersExample */;
+			targetProxy = 0F090E9027E3766300E5E5C3 /* PBXContainerItemProxy */;
+		};
+		0F090E9527E37A0400E5E5C3 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			platformFilter = ios;
+			target = 0F8B93B227E2546400C95F71 /* StargazersKit */;
+			targetProxy = 0F090E9427E37A0400E5E5C3 /* PBXContainerItemProxy */;
+		};
 		0F8B93C027E2546500C95F71 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 0F8B93B227E2546400C95F71 /* StargazersKit */;
@@ -502,7 +547,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -559,7 +604,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -681,12 +726,13 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = dev.casula.StargazersExample;
+				PRODUCT_BUNDLE_IDENTIFIER = dev.casula.SKSample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -710,12 +756,13 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = dev.casula.StargazersExample;
+				PRODUCT_BUNDLE_IDENTIFIER = dev.casula.SKSample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
