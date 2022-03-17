@@ -21,22 +21,27 @@ public class StargazersKit {
     private static var isSetupDone: Bool = false
 
     private var stargazersService: StargazersService
+    private var hostBundleIdentifier: String
 
-    private init(stargazersService: StargazersService) {
+    private init(bundleIdentifier: String, stargazersService: StargazersService) {
+        self.hostBundleIdentifier = bundleIdentifier
         self.stargazersService = stargazersService
     }
 
     /// Configures a default StargazersKit instance. Raises an exception if any configuration step fails.
     /// This method should be called after the app is launched and before using the StargazersKit shared instance.
-    public class func configure() {
-        configure(networkClient: StandardNetworkClient())
+    /// - Parameter bundleIdentifier: The bundle identifier of the Host application.
+    public class func configure(bundleIdentifier: String) {
+        configure(bundleIdentifier: bundleIdentifier, networkClient: StandardNetworkClient())
     }
 
     /// Internal configuration method.
+    /// - Parameter bundleIdentifier: The bundle identifier of the Host application.
     /// - Parameter networkClient: The network client. Useful for mocking purposes.
-    class func configure(networkClient: NetworkClientProtocol) {
+    class func configure(bundleIdentifier: String, networkClient: NetworkClientProtocol) {
         guard !isSetupDone else { return }
         _shared = .init(
+            bundleIdentifier: bundleIdentifier,
             stargazersService: .init(networkClient: networkClient)
         )
         isSetupDone = true
@@ -53,7 +58,7 @@ public class StargazersKit {
         completion: @escaping (Result<[Stargazer], StargazerError>) -> Void
     ) {
         do {
-            guard try SecurityService.isDeviceSecure()
+            guard try SecurityService.isDeviceSecure(bundleIdentifier: hostBundleIdentifier)
             else { completion(.failure(.deviceUnsecure)); return }
 
             stargazersService.getStargazers(
