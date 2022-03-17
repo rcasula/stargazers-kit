@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import StargazersKit
 
 @main
 struct StargazersExampleApp: App {
@@ -13,5 +14,9 @@ struct StargazersExampleApp: App {
         WindowGroup {
             ContentView()
         }
+    }
+
+    init() {
+        StargazersKit.configure(bundleIdentifier: Bundle.main.bundleIdentifier!)
     }
 }
