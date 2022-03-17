@@ -22,6 +22,8 @@
 		0F090E8627E32A3900E5E5C3 /* RequestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F090E8527E32A3900E5E5C3 /* RequestTests.swift */; };
 		0F090E8827E32A4C00E5E5C3 /* NetworkClientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F090E8727E32A4C00E5E5C3 /* NetworkClientTests.swift */; };
 		0F090E8A27E32A5A00E5E5C3 /* SecurityTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F090E8927E32A5A00E5E5C3 /* SecurityTests.swift */; };
+		0F090E8D27E3626C00E5E5C3 /* SecurityService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F090E8C27E3626C00E5E5C3 /* SecurityService.swift */; };
+		0F090E8F27E36C5F00E5E5C3 /* VPNChecker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F090E8E27E36C5F00E5E5C3 /* VPNChecker.swift */; };
 		0F8B93B827E2546400C95F71 /* StargazersKit.docc in Sources */ = {isa = PBXBuildFile; fileRef = 0F8B93B727E2546400C95F71 /* StargazersKit.docc */; };
 		0F8B93BE27E2546500C95F71 /* StargazersKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F8B93B327E2546400C95F71 /* StargazersKit.framework */; };
 		0F8B93C327E2546500C95F71 /* StargazersKitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F8B93C227E2546500C95F71 /* StargazersKitTests.swift */; };
@@ -58,6 +60,8 @@
 		0F090E8527E32A3900E5E5C3 /* RequestTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestTests.swift; sourceTree = "<group>"; };
 		0F090E8727E32A4C00E5E5C3 /* NetworkClientTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkClientTests.swift; sourceTree = "<group>"; };
 		0F090E8927E32A5A00E5E5C3 /* SecurityTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecurityTests.swift; sourceTree = "<group>"; };
+		0F090E8C27E3626C00E5E5C3 /* SecurityService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecurityService.swift; sourceTree = "<group>"; };
+		0F090E8E27E36C5F00E5E5C3 /* VPNChecker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VPNChecker.swift; sourceTree = "<group>"; };
 		0F8B93B327E2546400C95F71 /* StargazersKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = StargazersKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		0F8B93B627E2546400C95F71 /* StargazersKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = StargazersKit.h; sourceTree = "<group>"; };
 		0F8B93B727E2546400C95F71 /* StargazersKit.docc */ = {isa = PBXFileReference; lastKnownFileType = folder.documentationcatalog; path = StargazersKit.docc; sourceTree = "<group>"; };
@@ -101,6 +105,7 @@
 			children = (
 				0F090E6727E3145200E5E5C3 /* Model */,
 				0F090E6A27E3145200E5E5C3 /* Network */,
+				0F090E8B27E3625800E5E5C3 /* Security */,
 				0F090E6427E3141200E5E5C3 /* StargazersKit.swift */,
 			);
 			path = Sources;
@@ -176,6 +181,15 @@
 				0F090E8227E3275C00E5E5C3 /* stargazers.json */,
 			);
 			path = Mock;
+			sourceTree = "<group>";
+		};
+		0F090E8B27E3625800E5E5C3 /* Security */ = {
+			isa = PBXGroup;
+			children = (
+				0F090E8C27E3626C00E5E5C3 /* SecurityService.swift */,
+				0F090E8E27E36C5F00E5E5C3 /* VPNChecker.swift */,
+			);
+			path = Security;
 			sourceTree = "<group>";
 		};
 		0F8B93A927E2546400C95F71 = {
@@ -398,6 +412,8 @@
 				0F090E7F27E31D0D00E5E5C3 /* Int+StatusCode.swift in Sources */,
 				0F090E7127E3145200E5E5C3 /* DataRequest.swift in Sources */,
 				0F090E7C27E31A7A00E5E5C3 /* StargazersService.swift in Sources */,
+				0F090E8F27E36C5F00E5E5C3 /* VPNChecker.swift in Sources */,
+				0F090E8D27E3626C00E5E5C3 /* SecurityService.swift in Sources */,
 				0F8B93B827E2546400C95F71 /* StargazersKit.docc in Sources */,
 				0F090E7027E3145200E5E5C3 /* NetworkClientProtocol.swift in Sources */,
 			);

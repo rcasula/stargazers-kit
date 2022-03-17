@@ -7,7 +7,7 @@
 
 import Foundation
 
-public enum NetworkError: Error {
+public enum NetworkError: LocalizedError {
 
     case notFound
     case badRequest
@@ -18,6 +18,24 @@ public enum NetworkError: Error {
     
     case decoding(Error)
     case unknown(Error)
+
+    public var errorDescription: String? {
+        switch self {
+        case .notFound:
+            return "The repository you are looking for does not exists."
+        case .badRequest:
+            return "Bad request"
+        case .invalidEndpoint:
+            return "The endpoint you provided is invalid."
+        case .invalidResponse:
+            return "The response is invalid."
+        case .emptyResponse:
+            return "The response is empty."
+        case .decoding(let error),
+             .unknown(let error):
+            return error.localizedDescription
+        }
+    }
 
     init?(statusCode: Int) {
         switch statusCode {
