@@ -9,7 +9,7 @@ on:
       - '*'
 
 jobs:
-  library:
+  test:
     runs-on: macos-11
     strategy:
       matrix:
