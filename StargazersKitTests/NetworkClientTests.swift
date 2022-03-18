@@ -6,6 +6,7 @@
 //
 
 import XCTest
+
 @testable import StargazersKit
 
 class NetworkClientTests: XCTestCase {
@@ -21,15 +22,17 @@ class NetworkClientTests: XCTestCase {
 
         var response: [Stargazer] = []
         let request = StargazersRequest(repo: "test", owner: "test1")
-        networkClient?.dataRequest(request, completion: { result in
-            switch result {
-            case .success(let stargazers):
-                response = stargazers
-                didReceiveResponse.fulfill()
-            case .failure(let error):
-                XCTFail(error.localizedDescription)
-            }
-        })
+        networkClient?.dataRequest(
+            request,
+            completion: { result in
+                switch result {
+                case .success(let stargazers):
+                    response = stargazers
+                    didReceiveResponse.fulfill()
+                case .failure(let error):
+                    XCTFail(error.localizedDescription)
+                }
+            })
 
         wait(for: [didReceiveResponse], timeout: 1)
 

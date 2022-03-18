@@ -1,6 +1,6 @@
 //
 //  StargazersKit.swift
-//  
+//
 //
 //  Created by Roberto Casula on 16/03/22.
 //
@@ -59,7 +59,10 @@ public class StargazersKit {
     ) {
         do {
             guard try SecurityService.isDeviceSecure(bundleIdentifier: hostBundleIdentifier)
-            else { completion(.failure(.deviceUnsecure)); return }
+            else {
+                completion(.failure(.deviceUnsecure))
+                return
+            }
 
             stargazersService.getStargazers(
                 repo: repository,

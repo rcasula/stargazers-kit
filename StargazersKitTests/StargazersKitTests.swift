@@ -6,6 +6,7 @@
 //
 
 import XCTest
+
 @testable import StargazersKit
 
 class StargazersKitTests: XCTestCase {
@@ -13,7 +14,7 @@ class StargazersKitTests: XCTestCase {
     override func setUpWithError() throws {
         StargazersKit.configure(bundleIdentifier: "dev.casula.tests")
     }
-    
+
     func testFull() {
         let didReceiveResponse = expectation(description: #function)
 

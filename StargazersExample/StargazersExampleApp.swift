@@ -5,8 +5,8 @@
 //  Created by Roberto Casula on 16/03/22.
 //
 
-import SwiftUI
 import StargazersKit
+import SwiftUI
 
 @main
 struct StargazersExampleApp: App {

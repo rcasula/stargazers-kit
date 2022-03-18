@@ -5,8 +5,8 @@
 //  Created by Roberto Casula on 17/03/22.
 //
 
-import UIKit
 import Foundation
+import UIKit
 
 class SecurityService {
 
@@ -44,11 +44,11 @@ class SecurityService {
     }
 
     class func isRunningInSimulator() -> Bool {
-#if targetEnvironment(simulator)
-        let isSimulator = true
-#else
-        let isSimulator = false
-#endif
+        #if targetEnvironment(simulator)
+            let isSimulator = true
+        #else
+            let isSimulator = false
+        #endif
         return isSimulator || ProcessInfo().environment["SIMULATOR_DEVICE_NAME"] != nil
     }
 
@@ -80,7 +80,7 @@ extension SecurityService {
             "undecimus://",
             "cydia://",
             "sileo://",
-            "zbra://"
+            "zbra://",
         ]
 
         for url in urlSchemes.compactMap(URL.init(string:)) {
@@ -100,7 +100,7 @@ extension SecurityService {
             "/Library/MobileSubstrate/MobileSubstrate.dylib",
             "/Library/MobileSubstrate/DynamicLibraries/Veency.plist",
             "/Library/MobileSubstrate/DynamicLibraries/LiveClock.plist",
-            "/System/Library/LaunchDaemons/com.saurik.Cydia.Startup.plist"
+            "/System/Library/LaunchDaemons/com.saurik.Cydia.Startup.plist",
         ]
 
         if !isRunningInSimulator() {
@@ -108,7 +108,7 @@ extension SecurityService {
                 "/bin/bash",
                 "/usr/sbin/sshd",
                 "/bin/sh",
-                "/usr/bin/ssh"
+                "/usr/bin/ssh",
             ]
         }
 
@@ -125,12 +125,13 @@ extension SecurityService {
         let paths = [
             "/",
             "/root/",
-            "/private/"
+            "/private/",
         ]
         for path in paths {
             do {
-                let filePath = path+UUID().uuidString
-                try UUID().uuidString.write(toFile: filePath, atomically: true, encoding: String.Encoding.utf8)
+                let filePath = path + UUID().uuidString
+                try UUID().uuidString.write(
+                    toFile: filePath, atomically: true, encoding: String.Encoding.utf8)
                 try FileManager.default.removeItem(atPath: filePath)
                 return true
             } catch {}

@@ -15,7 +15,7 @@ struct StargazersRequest: Request {
     private static var path: String { "/repos/{owner}/{repo}/stargazers" }
 
     var method: Method { .get }
-    var headers: [String : String] {
+    var headers: [String: String] {
         ["Accept": "application/json"]
     }
 
@@ -33,7 +33,7 @@ struct StargazersRequest: Request {
             path: Self.path,
             pathParameters: [
                 "repo": repo,
-                "owner": owner
+                "owner": owner,
             ]
         )
     }

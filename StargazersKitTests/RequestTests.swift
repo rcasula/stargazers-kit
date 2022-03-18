@@ -6,6 +6,7 @@
 //
 
 import XCTest
+
 @testable import StargazersKit
 
 class RequestTests: XCTestCase {

@@ -5,8 +5,8 @@
 //  Created by Roberto Casula on 16/03/22.
 //
 
-import SwiftUI
 import StargazersKit
+import SwiftUI
 
 struct ContentView: View {
 
@@ -29,7 +29,8 @@ struct ContentView: View {
                                         .aspectRatio(contentMode: .fill)
                                         .frame(width: 65, height: 65, alignment: .center)
                                         .clipShape(Circle())
-                                }, placeholder: {
+                                },
+                                placeholder: {
                                     Color.gray
                                         .frame(width: 65, height: 65, alignment: .center)
                                         .clipShape(Circle())

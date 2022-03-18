@@ -1,6 +1,6 @@
 //
 //  DataRequest.swift
-//  
+//
 //
 //  Created by Roberto Casula on 17/03/22.
 //
@@ -21,7 +21,7 @@ protocol Request {
     var url: String { get }
 
     var method: Method { get }
-    var headers: [String : String] { get }
+    var headers: [String: String] { get }
 
     var decoder: JSONDecoder { get }
 
@@ -30,7 +30,9 @@ protocol Request {
 
 extension Request {
 
-    static func getUrl(for baseUrl: String, path: String, pathParameters: [String: String]) -> String {
+    static func getUrl(for baseUrl: String, path: String, pathParameters: [String: String])
+        -> String
+    {
         var path = path
         pathParameters.forEach { key, value in
             path = path.replacingOccurrences(of: "{\(key)}", with: value)

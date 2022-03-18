@@ -1,6 +1,6 @@
 //
 //  NetworkError.swift
-//  
+//
 //
 //  Created by Roberto Casula on 17/03/22.
 //
@@ -15,7 +15,7 @@ public enum NetworkError: LocalizedError {
     case invalidEndpoint
     case invalidResponse
     case emptyResponse
-    
+
     case decoding(Error)
     case unknown(Error)
 
@@ -32,7 +32,7 @@ public enum NetworkError: LocalizedError {
         case .emptyResponse:
             return "The response is empty."
         case .decoding(let error),
-             .unknown(let error):
+            .unknown(let error):
             return error.localizedDescription
         }
     }
