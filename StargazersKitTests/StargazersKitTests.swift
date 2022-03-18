@@ -12,7 +12,7 @@ import XCTest
 class StargazersKitTests: XCTestCase {
 
     override func setUpWithError() throws {
-        StargazersKit.configure(
+        StargazersApp.configure(
             bundleIdentifier: "dev.casula.tests",
             networkClient: MockNetworkClient()
         )
@@ -22,7 +22,7 @@ class StargazersKitTests: XCTestCase {
         let didReceiveResponse = expectation(description: #function)
 
         var stargazers: [Stargazer] = []
-        StargazersKit.shared.stargazers(
+        StargazersApp.shared.stargazers(
             for: "GRDB.swift", owner: "groue"
         ) { result in
             switch result {
@@ -34,7 +34,7 @@ class StargazersKitTests: XCTestCase {
             }
         }
 
-        wait(for: [didReceiveResponse], timeout: 1)
+        wait(for: [didReceiveResponse], timeout: 5)
 
         XCTAssertGreaterThan(stargazers.count, 0, "Stargazers are empty")
     }

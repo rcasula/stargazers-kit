@@ -13,7 +13,7 @@ jobs:
     strategy:
       matrix:
         xcode:
-          - '13.2.1'
+          - '13.3'
     steps:
       - uses: actions/checkout@v2
       
@@ -59,7 +59,7 @@ jobs:
         uses: actions/upload-release-asset@v1
         with:
           upload_url: ${{ steps.create_release.outputs.upload_url }}
-          asset_path: ./StargazersKit.xcframework.zip
+          asset_path: ./build/StargazersKit.xcframework.zip
           asset_name: StargazersKit.xcframework.zip
           asset_content_type: application/zip
 env:

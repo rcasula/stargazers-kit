@@ -17,6 +17,6 @@ struct StargazersExampleApp: App {
     }
 
     init() {
-        StargazersKit.configure(bundleIdentifier: Bundle.main.bundleIdentifier!)
+        StargazersApp.configure(bundleIdentifier: Bundle.main.bundleIdentifier!)
     }
 }
