@@ -10,6 +10,10 @@ jobs:
   create_release:
     name: Create Release
     runs-on: macos-latest
+    strategy:
+      matrix:
+        xcode:
+          - '13.2.1'
     steps:
       - uses: actions/checkout@v2
       
