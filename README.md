@@ -46,7 +46,7 @@ StargazersApp.shared.stargazers(
 
 You can add StargazersKit to an Xcode project by adding it manually.
 
-1. [Download](https://github.com/rcasula/StargazersKit/releases) a copy of StargazersKit.
+1. [Download](https://github.com/rcasula/stargazers-kit/releases) a copy of StargazersKit.
 
 2. Drag the downloaded `StargazersKit.xcframework` in your own project and make sure is set to be embedded in the **Embedded Binaries** section of the **General** tab of your application target.
 
