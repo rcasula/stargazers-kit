@@ -61,7 +61,7 @@ struct ContentView: View {
 
     func fetch() async throws -> [Stargazer] {
         try await withCheckedThrowingContinuation { continuation in
-            StargazersKit.shared.stargazers(for: "GRDB.swift", owner: "groue") { result in
+            StargazersApp.shared.stargazers(for: "GRDB.swift", owner: "groue") { result in
                 continuation.resume(with: result)
             }
         }

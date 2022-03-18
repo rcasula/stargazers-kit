@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0F090E6527E3141200E5E5C3 /* StargazersKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F090E6427E3141200E5E5C3 /* StargazersKit.swift */; };
+		0F090E6527E3141200E5E5C3 /* StargazersApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F090E6427E3141200E5E5C3 /* StargazersApp.swift */; };
 		0F090E6E27E3145200E5E5C3 /* StargazerError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F090E6827E3145200E5E5C3 /* StargazerError.swift */; };
 		0F090E6F27E3145200E5E5C3 /* Stargazer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F090E6927E3145200E5E5C3 /* Stargazer.swift */; };
 		0F090E7027E3145200E5E5C3 /* NetworkClientProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F090E6B27E3145200E5E5C3 /* NetworkClientProtocol.swift */; };
@@ -75,7 +75,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		0F090E6427E3141200E5E5C3 /* StargazersKit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StargazersKit.swift; sourceTree = "<group>"; };
+		0F090E6427E3141200E5E5C3 /* StargazersApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StargazersApp.swift; sourceTree = "<group>"; };
 		0F090E6827E3145200E5E5C3 /* StargazerError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StargazerError.swift; sourceTree = "<group>"; };
 		0F090E6927E3145200E5E5C3 /* Stargazer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Stargazer.swift; sourceTree = "<group>"; };
 		0F090E6B27E3145200E5E5C3 /* NetworkClientProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkClientProtocol.swift; sourceTree = "<group>"; };
@@ -137,7 +137,7 @@
 				0F090E6727E3145200E5E5C3 /* Model */,
 				0F090E6A27E3145200E5E5C3 /* Network */,
 				0F090E8B27E3625800E5E5C3 /* Security */,
-				0F090E6427E3141200E5E5C3 /* StargazersKit.swift */,
+				0F090E6427E3141200E5E5C3 /* StargazersApp.swift */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -442,7 +442,7 @@
 				0F090E6E27E3145200E5E5C3 /* StargazerError.swift in Sources */,
 				0F090E7227E3145200E5E5C3 /* NetworkError.swift in Sources */,
 				0F090E6F27E3145200E5E5C3 /* Stargazer.swift in Sources */,
-				0F090E6527E3141200E5E5C3 /* StargazersKit.swift in Sources */,
+				0F090E6527E3141200E5E5C3 /* StargazersApp.swift in Sources */,
 				0F090E7F27E31D0D00E5E5C3 /* Int+StatusCode.swift in Sources */,
 				0F090E7127E3145200E5E5C3 /* DataRequest.swift in Sources */,
 				0F090E7C27E31A7A00E5E5C3 /* StargazersService.swift in Sources */,

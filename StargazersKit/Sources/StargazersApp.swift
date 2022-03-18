@@ -7,17 +7,17 @@
 
 import Foundation
 
-public class StargazersKit {
+public class StargazersApp {
 
     /// The StargazersKit shared instance. Throws a `fatalError` if `StargazersKit.configure()` is not called before using it.
-    public static var shared: StargazersKit {
+    public static var shared: StargazersApp {
         guard isSetupDone, let sharedInstance = _shared else {
             fatalError("[StargazersKit] ERROR: You must call `StargazersKit.configure()`")
         }
         return sharedInstance
     }
 
-    private static var _shared: StargazersKit?
+    private static var _shared: StargazersApp?
     private static var isSetupDone: Bool = false
 
     private var stargazersService: StargazersService
@@ -28,8 +28,8 @@ public class StargazersKit {
         self.stargazersService = stargazersService
     }
 
-    /// Configures a default StargazersKit instance. Raises an exception if any configuration step fails.
-    /// This method should be called after the app is launched and before using the StargazersKit shared instance.
+    /// Configures a default StargazersApp instance. Raises an exception if any configuration step fails.
+    /// This method should be called after the app is launched and before using the StargazersApp shared instance.
     /// - Parameter bundleIdentifier: The bundle identifier of the Host application.
     public class func configure(bundleIdentifier: String = Bundle.main.bundleIdentifier!) {
         configure(bundleIdentifier: bundleIdentifier, networkClient: StandardNetworkClient())
