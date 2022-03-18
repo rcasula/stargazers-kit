@@ -12,7 +12,10 @@ import XCTest
 class StargazersKitTests: XCTestCase {
 
     override func setUpWithError() throws {
-        StargazersKit.configure(bundleIdentifier: "dev.casula.tests")
+        StargazersKit.configure(
+            bundleIdentifier: "dev.casula.tests",
+            networkClient: MockNetworkClient()
+        )
     }
 
     func testFull() {
