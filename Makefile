@@ -17,7 +17,7 @@ test:
 		-destination platform="$(PLATFORM_IOS)"
 
 clean:
-	rm StargazersKit-*.zip
+	rm -f StargazersKit-*.zip
 	rm -rf ./build
 
 archive-ios-release:
@@ -68,8 +68,7 @@ framework-debug:
 		-output './build/$(SCHEME)-Debug.xcframework'
 
 zip:
-	zip -qq -r $(SCHEME)-Relese.zip ./build/$(SCHEME)-Relese.xcframework 
-	zip -qq -r $(SCHEME)-Debug.zip ./build/$(SCHEME)-Debug.xcframework
+	zip -qq -r $(SCHEME).xcframework.zip ./build/$(SCHEME)-Relese.xcframework ./build/$(SCHEME)-Debug.xcframework
 
 format:
 	swift format \
