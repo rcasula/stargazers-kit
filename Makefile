@@ -18,7 +18,8 @@ test:
 
 clean:
 	rm -f StargazersKit-*.zip
-	rm -rf ./build
+	rm -rf ./build*
+	rm -rf ./artifacts*
 
 archive-ios-release:
 	xcodebuild archive \
@@ -60,15 +61,15 @@ framework-release:
 	xcodebuild -create-xcframework \
 		-framework './build/$(SCHEME)-Release.framework.xcarchive/Products/Library/Frameworks/$(SCHEME).framework' \
 		-framework './build/$(SCHEME)-Release.framework-iphonesimulator.xcarchive/Products/Library/Frameworks/$(SCHEME).framework' \
-		-output './build/$(SCHEME)-Release.xcframework'
+		-output './artifacts/$(SCHEME).xcframework'
 framework-debug:
 	xcodebuild -create-xcframework \
 		-framework './build/$(SCHEME)-Debug.framework.xcarchive/Products/Library/Frameworks/$(SCHEME).framework' \
 		-framework './build/$(SCHEME)-Debug.framework-iphonesimulator.xcarchive/Products/Library/Frameworks/$(SCHEME).framework' \
-		-output './build/$(SCHEME)-Debug.xcframework'
+		-output './artifacts/$(SCHEME)-Debug.xcframework'
 
 zip:
-	zip -qq -r $(SCHEME).xcframework.zip ./build/$(SCHEME)-Relese.xcframework ./build/$(SCHEME)-Debug.xcframework
+	zip -qq -r $(SCHEME).xcframework.zip ./artifacts/$(SCHEME)*.xcframework
 
 format:
 	swift format \
